@@ -11,7 +11,7 @@
 
 const STORE_KEY = "researchdesk.sessions.v1";
 const API_KEY = "researchdesk.api";
-const DEFAULT_API = "http://127.0.0.1:8000";
+const DEFAULT_API = "https://research-assistant-f9as.onrender.com";
 const NEW_TITLE = "New research";
 
 const $ = (sel) => document.querySelector(sel);
