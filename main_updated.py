@@ -17,6 +17,35 @@ app.add_middleware(
 )
 
 
+from pathlib import Path
+from fastapi.responses import FileResponse
+
+BASE_DIR = Path(__file__).resolve().parent
+
+@app.get("/", include_in_schema=False)
+async def serve_frontend():
+    index_file = BASE_DIR / "index.html"
+    if not index_file.exists():
+        raise HTTPException(status_code=404, detail="index.html not found beside the server file")
+    return FileResponse(index_file, media_type="text/html")
+
+
+@app.get("/style.css", include_in_schema=False)
+async def serve_stylesheet():
+    css_file = BASE_DIR / "style.css"
+    if not css_file.exists():
+        raise HTTPException(status_code=404, detail="style.css not found beside the server file")
+    return FileResponse(css_file, media_type="text/css")
+
+
+@app.get("/script.js", include_in_schema=False)
+async def serve_javascript():
+    js_file = BASE_DIR / "script.js"
+    if not js_file.exists():
+        raise HTTPException(status_code=404, detail="script.js not found beside the server file")
+    return FileResponse(js_file, media_type="application/javascript")
+
+
 class ChatRequest(BaseModel):
     message: str    
     thread_id: str
