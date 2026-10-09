@@ -1,0 +1,12 @@
+langchain-groq
+langchain-core
+langgraph
+langchain-mcp-adapters
+mcp
+langchain_tavily
+python-dotenv
+fastapi
+pydantic
+rich
+ipykernel
+uvicorn
