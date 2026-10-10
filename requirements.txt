@@ -10,3 +10,4 @@ pydantic
 rich
 ipykernel
 uvicorn
+langchain-mistralai

@@ -1,4 +1,4 @@
-from langchain_groq import ChatGroq
+from langchain_mistralai import ChatMistralAI
 from dotenv import load_dotenv
 load_dotenv()
 from tools.email_tool import send_email
@@ -9,6 +9,6 @@ tools = [
     send_email
 ]
 
-llm = ChatGroq(model="qwen/qwen3.8-27b")
+llm = ChatMistralAI(model_name="mistral-small-latest")
 
 llm_with_tool = llm.bind_tools(tools)
