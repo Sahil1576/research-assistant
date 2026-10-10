@@ -3,7 +3,7 @@ name : Build and Push Docker Image
 on:
   push:
     branches:
-      -main
+      - main
   workflow_dispatch:
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
       - name: build and push image
         uses: docker/build-push-action@v6
         with:
-          contex: .
+          context: .
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/research-assistant:latest
