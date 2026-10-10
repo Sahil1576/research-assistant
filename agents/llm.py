@@ -9,6 +9,6 @@ tools = [
     send_email
 ]
 
-llm = ChatMistralAI(model_name="mistral-small-latest")
+llm = ChatMistralAI(model_name="ministral-8b-latest")
 
 llm_with_tool = llm.bind_tools(tools)
